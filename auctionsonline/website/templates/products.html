@@ -1,0 +1,12 @@
+{% load custom_tags %}
+<!-- If there is a watchlist parameter ... -->
+{% if watchlist %}
+    <!-- If the auction id is also in the watchlist QuerySet ... -->
+    {% if watchlist|search:auction.id%}
+        Unwatch
+    {% else %}
+        Watch
+    {% endif %}
+{% else %}
+    Watch
+{% endif %}
