@@ -434,3 +434,9 @@ def logout_page(request):
     except:
         pass # if there is no session pass
     return index(request)
+
+# chat/views.py
+def room(request, room_name):
+    return render(request, 'room.html', {
+        'room_name': room_name
+    })
